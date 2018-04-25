@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Criacao_Arvore
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Digite a altura da piramide");
+            int H = int.Parse(Console.ReadLine());
+            int ih = 1; //Altura ou camada(iteracao)
+            int Si = 1; //Espaco interior
+
+            for (int h = H; h > 0; h--)
+            {
+                
+
+                for (int s = h - 1; s > 0; s--)
+                {
+                    Console.Write("  ");
+                    
+                }
+                Console.Write("x"); // lado esq piramide
+
+                //**********************************************************
+                if (ih>=2)
+                {
+
+
+                    for (int EI = Si; EI > 0;EI--)
+                    {
+
+                        Console.Write("  "); //preenchimento da piramide
+
+                    }
+
+                    Console.Write("x"); //lado dir piramide
+                    Si += 2;
+                }
+
+                Console.Write("\n");
+                ih++; //Vai para a proxima iteracao
+            }
+
+            Console.WriteLine("\n Finalizado com {0} iteracoes", ih-1);
+            Console.ReadKey();
+
+        }
+    }
+}
